@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return HttpResponse("<h1>Welcome to My Portfolio</h1><p>More coming soon 🚀</p>")
+    return render(request, "portfolio/home.html")
