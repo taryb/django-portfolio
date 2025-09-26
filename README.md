@@ -20,7 +20,7 @@ This project demonstrates full-stack development with Python, Django, and modern
 
 ### Clone & Setup
 ```bash
-git clone https://github.com/<your-username>/django-portfolio.git
+git clone https://github.com/taryb/django-portfolio.git
 cd django-portfolio
 python -m venv .venv
 
