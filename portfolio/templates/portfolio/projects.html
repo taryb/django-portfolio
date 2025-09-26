@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f4f8; }
+        h1 { color: #333; }
+        .project { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; background: #fff; }
+        .project h2 { margin: 0; color: #007acc; }
+        .project p { margin: 5px 0; color: #444; }
+        a { text-decoration: none; color: #007acc; }
+    </style>
+</head>
+<body>
+    <h1>My Projects</h1>
+    {% for p in projects %}
+    <div class="project">
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.desc }}</p>
+    </div>
+    {% empty %}
+    <p>No projects yet. Stay tuned!</p>
+    {% endfor %}
+</body>
+</html>
