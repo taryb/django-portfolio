@@ -4,23 +4,20 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual environments
+# Virtual envs
 .venv/
 env/
 venv/
 
-# Django stuff
-*.log
-*.pot
-*.pyc
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Django
 db.sqlite3
-media/
-staticfiles/
+/staticfiles/
+/media/
 
 # IDE/project files
 .vscode/
 .idea/
-
-# OS files
-.DS_Store
-Thumbs.db

@@ -18,16 +18,16 @@ SECRET_KEY = os.getenv("SECRET_KEY", "!!!-REPLACE-ME-FOR-LOCAL-ONLY-!!!")
 
 # Optionally set DEBUG in env for local dev:
 # DEBUG=true  (anything truthy)
-DEBUG = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes"}
-#DEBUG = True
+# DEBUG = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes"}
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "taryb.dev",
     "www.taryb.dev",
     # Keep the Render hostname during cutover (replace with your actual one or remove later):
     os.getenv("RENDER_EXTERNAL_HOSTNAME", "").strip() or "your-service.onrender.com",
-    #"localhost",
-    #"127.0.0.1",
+    "localhost",
+    "127.0.0.1",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
