@@ -3,18 +3,25 @@
 A personal portfolio website built with **Django**, showcasing projects, skills, and experience.  
 This project demonstrates full-stack development with Python, Django, and modern web workflows.
 
+---
+
 ## Features
-- Homepage with about section
-- Portfolio app for displaying projects (basic version working)
+- Homepage with **About Me** section
+- Portfolio app for displaying projects
 - Contact form (planned)
-- Responsive design (planned)
+- Responsive design (planned, mobile-friendly)
+
+---
 
 ## Roadmap
 - [x] Initialize Django project
 - [x] Create Portfolio app with homepage
 - [ ] Add database models for Projects
 - [ ] Build templates for project listings
-- [ ] Deploy to production (Render/Heroku)
+- [ ] Add contact form + email backend
+- [x] Deploy to production (Render + custom domain)
+
+---
 
 ## Quick Start
 
@@ -31,3 +38,5 @@ source .venv/bin/activate
 .\.venv\Scripts\Activate.ps1
 
 pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
