@@ -7,4 +7,7 @@ def about(request):
     return render(request, "portfolio/about.html")
 
 def projects(request):
-    return render(request, "portfolio/projects.html")  # keep if you have projects
+    return render(request, "portfolio/projects.html")
+
+def contact(request):
+    return render(request, "portfolio/contact.html")
