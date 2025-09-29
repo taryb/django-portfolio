@@ -16,36 +16,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = <a long, random value>
 SECRET_KEY = os.getenv("SECRET_KEY", "!!!-REPLACE-ME-FOR-LOCAL-ONLY-!!!")
 
-# Optionally set DEBUG in env for local dev:
-# DEBUG=true  (anything truthy)
-# DEBUG = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes"}
-DEBUG = True
-
+# Debug
+DEBUG = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes"}
 ALLOWED_HOSTS = [
     "taryb.dev",
     "www.taryb.dev",
-    # Keep the Render hostname during cutover (replace with your actual one or remove later):
-    os.getenv("RENDER_EXTERNAL_HOSTNAME", "").strip() or "your-service.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    os.getenv("RENDER_EXTERNAL_HOSTNAME", "").strip(),
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://taryb.dev",
     "https://www.taryb.dev",
+    f"https://{os.getenv('RENDER_EXTERNAL_HOSTNAME', '').strip()}",
 ]
 
 # Trust X-Forwarded-Proto from Render so Django knows it’s HTTPS
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Tighten cookies when not in DEBUG
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE   = not DEBUG
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # (Optional but recommended once DNS/HTTPS is stable; increase max_age over time)
-# SECURE_HSTS_SECONDS = 60 * 60 * 24 * 7   # 1 week to start; raise to 31536000 later
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 60 * 60 * 24 * 7   # 1 week to start
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 # -----------------------------------------------------------------------------
 # Applications
